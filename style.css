@@ -87,4 +87,7 @@ tbody .metrics__table-row:last-child th::before{
     left: 0;
     top: 32%;
 }
-
+#graph_activation, #graph_retention{
+    margin-top: 40px;
+    max-height: 380px;
+}

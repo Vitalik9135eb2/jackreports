@@ -1,36 +1,59 @@
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('graph_activation');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Jun', 'Dec', 'Nov', 'Oct', 'Sep', 'Aug'],
-        datasets: [{
+        datasets: [
+            /* Параметры первой таблицы для IOS*/
+        {
             label: '',
-            data: [11,7],
+            data: [11,11,11,11,11,11],
             backgroundColor: [
                 '#0073FF',
-                '#009E8B',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
             ],
             borderColor: [
                 '#0073FF',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        }]
+        },
+            /* Параметры первой таблицы для Android*/
+        {
+            label: '',
+            data: [7,7,7,7,7,7],
+            backgroundColor: [
+                '#009E8B',
+            ],
+            borderColor: [
+                '#009E8B',
+            ],
+            borderWidth: 1,
+            
+        },
+        
+    ],
+    
     },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+});
+
+
+let ctx2 = document.getElementById('graph_retention');
+let chart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: ['1m', '2m', '4m', '6m', '8m', '10m', '12m'],
+        datasets: [
+        { // График зелёного цвета
+            label: 'График 1',
+            backgroundColor: 'transparent',
+            borderColor: 'green',
+            data: [70, 60, 60, 50, 40, 30, 20],
+        },
+        { // График синего цвета
+            label: 'График 2',
+            // backgroundColor: 'transparent',
+            borderColor: 'blue',
+            data: [90, 80, 80, 70, 60, 50, 40]
         }
-    }
+    ],
+    },
 });
